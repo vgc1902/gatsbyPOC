@@ -1,28 +1,51 @@
+require("dotenv").config({
+	path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
-  siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "gatsbyPOC",
-  },
-  plugins: [
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        accessToken: "",
-        spaceId: "",
-      },
-    },
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-  ],
+	siteMetadata: {
+		title: "GatsbyPOC",
+		description: "This is the #100daysofgatsby challenge",
+	},
+	plugins: [
+		"@chakra-ui/gatsby-plugin",
+		"gatsby-plugin-preact",
+		"gatsby-plugin-image",
+		{
+			resolve: "gatsby-plugin-manifest",
+			options: {
+				name: "GatsbyPOC",
+				short_name: "GatsbyPOC",
+				description: "This is the #100daysgatsbycode challenge",
+				lang: "en",
+				start_url: "/",
+				display: "standalone",
+				icon: "src/images/icon.png",
+				cache_busting_mode: "none",
+			},
+		},
+		{
+			resolve: "gatsby-plugin-offline",
+			options: {
+				precachePages: ["/contact", "city/*"],
+				workboxConfig: {
+					globPatterns: ["**/images*"],
+				},
+			},
+		},
+		{
+			resolve: "gatsby-source-contentful",
+			options: {
+				spaceId: process.env.CONTENTFUL_SPACE_ID,
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+			},
+		},
+		{
+			resolve: "gatsby-source-formium",
+			options: {
+				projectId: process.env.GATSBY_FORMIUM_PROJECTID,
+				accessToken: process.env.FORMIUM_ACCESS_TOKEN,
+			},
+		},
+	],
 };
