@@ -20,7 +20,17 @@ module.exports = {
 				lang: "en",
 				start_url: "/",
 				display: "standalone",
+				background_color: "#fff",
+				theme_color: "#fff",
 				icon: "src/images/icon.png",
+				icons: [
+					{
+						src: "src/images/icon.png",
+						sizes: "196x196",
+						type: "image/png",
+						purpose: "any maskable",
+					},
+				],
 				cache_busting_mode: "none",
 			},
 		},
