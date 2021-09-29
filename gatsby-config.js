@@ -20,6 +20,8 @@ module.exports = {
 				lang: "en",
 				start_url: "/",
 				display: "standalone",
+				background_color: "#fff",
+				theme_color: "#fff",
 				icon: "src/images/icon.png",
 				cache_busting_mode: "none",
 			},
