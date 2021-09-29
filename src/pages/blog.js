@@ -1,10 +1,25 @@
-import React from "react";
 import { Button } from "@chakra-ui/button";
 import { Box, Container, Flex, Heading, Spacer } from "@chakra-ui/layout";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import React from "react";
 import SEO from "./components/seo";
 
-export default function About() {
+export default function Blog() {
+	const data = useStaticQuery(graphql`
+		{
+			allWpPost {
+				edges {
+					node {
+						id
+						title
+						uri
+					}
+				}
+			}
+		}
+	`);
+	const { allWpPost } = data;
+
 	return (
 		<Container maxW='4xl' py='6'>
 			<SEO />
@@ -35,7 +50,12 @@ export default function About() {
 				</Box>
 			</Flex>
 			<Box my='6'>
-				<Heading size='lg'>About</Heading>
+				<Heading size='lg'>Blog</Heading>
+			</Box>
+			<Box>
+				{allWpPost.edges.map(({ node: post }) => (
+					<li key={post.id}>{post.title}</li>
+				))}
 			</Box>
 		</Container>
 	);

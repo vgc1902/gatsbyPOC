@@ -64,6 +64,11 @@ const AudioCoreForm = ({ data }) => {
 							Home
 						</Button>
 					</Link>
+					<Link to='/blog'>
+						<Button colorScheme='purple' mr='4'>
+							Blog
+						</Button>
+					</Link>
 					<Link to='/about'>
 						<Button colorScheme='purple' mr='4'>
 							About
