@@ -23,6 +23,13 @@ module.exports = {
 				background_color: "#fff",
 				theme_color: "#fff",
 				icon: "src/images/icon.png",
+				icons: [
+					{
+						src: "src/images/icon.png",
+						type: "image/png",
+						purpose: "any maskable",
+					},
+				],
 				cache_busting_mode: "none",
 			},
 		},
