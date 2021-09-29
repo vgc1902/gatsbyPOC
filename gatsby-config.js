@@ -26,7 +26,10 @@ module.exports = {
 				icons: [
 					{
 						src: "src/images/icon.png",
+<<<<<<< HEAD
 						sizes: "196x196",
+=======
+>>>>>>> 0cf635c5abf1e56c39f517bf5a85df012b33b5a3
 						type: "image/png",
 						purpose: "any maskable",
 					},
