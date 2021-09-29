@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Box, Container, Flex, Grid, Heading, Spacer } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Tag } from "@chakra-ui/tag";
+import SEO from "./components/seo";
 
 export const query = graphql`
 	query {
@@ -38,6 +39,7 @@ export default function Home({ data }) {
 	const imgSrc = getImage(data.headphones);
 	return (
 		<Container maxW='4xl' py='6'>
+			<SEO />
 			<Flex align='center'>
 				<Box>
 					<Heading size='md'>AudioC0re</Heading>

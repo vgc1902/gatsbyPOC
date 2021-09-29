@@ -2,10 +2,12 @@ import React from "react";
 import { Button } from "@chakra-ui/button";
 import { Box, Container, Flex, Heading, Spacer } from "@chakra-ui/layout";
 import { Link } from "gatsby";
+import SEO from "./components/seo";
 
 export default function About() {
 	return (
 		<Container maxW='4xl' py='6'>
+			<SEO />
 			<Flex align='center'>
 				<Box>
 					<Heading size='md'>AudioC0re</Heading>

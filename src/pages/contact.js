@@ -15,6 +15,7 @@ import {
 	FormHelperText,
 	Heading,
 } from "@chakra-ui/react";
+import SEO from "./components/seo";
 
 function TextInput(props) {
 	const { id, label, description, ...rest } = props;
@@ -51,6 +52,7 @@ const MyComponents = {
 const AudioCoreForm = ({ data }) => {
 	return (
 		<Container maxW='4xl' py='6'>
+			<SEO />
 			<Flex align='center'>
 				<Box>
 					<Heading size='md'>AudioC0re</Heading>
