@@ -32,6 +32,7 @@
     "gatsby-source-contentful": "^5.14.0",
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-source-formium": "^0.2.0",
+    "gatsby-source-wordpress": "^5.14.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",

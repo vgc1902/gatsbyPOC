@@ -44,6 +44,12 @@ module.exports = {
 			},
 		},
 		{
+			resolve: "gatsby-source-wordpress",
+			options: {
+				url: process.env.WP_ENDPOINT,
+			},
+		},
+		{
 			resolve: "gatsby-source-contentful",
 			options: {
 				spaceId: process.env.CONTENTFUL_SPACE_ID,
