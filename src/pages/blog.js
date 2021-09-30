@@ -1,7 +1,13 @@
-import { Button } from "@chakra-ui/button";
-import { Box, Container, Flex, Heading, Spacer } from "@chakra-ui/layout";
-import { Link, graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import {
+	Box,
+	Container,
+	Flex,
+	Heading,
+	Spacer,
+	Button,
+} from "@chakra-ui/react";
 import SEO from "./components/seo";
 
 export default function Blog() {
@@ -54,7 +60,9 @@ export default function Blog() {
 			</Box>
 			<Box>
 				{allWpPost.edges.map(({ node: post }) => (
-					<li key={post.id}>{post.title}</li>
+					<Link to={post.uri} key={post.id}>
+						{post.title}
+					</Link>
 				))}
 			</Box>
 		</Container>
